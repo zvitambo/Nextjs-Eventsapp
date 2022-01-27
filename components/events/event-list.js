@@ -5,9 +5,10 @@ import cssClasses from './event-list.module.css';
 const EventList = (props) => {
 
     const {events} = props;
+   
     return (
         <ul className={cssClasses.list}>
-            {events.map(event => <EventItem 
+            {events && events.map(event => <EventItem 
             key={event.id}
             id={event.id}
             title={event.title}

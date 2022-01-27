@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '../ui/button';
 import cssClasses from './event-item.module.css';
 import DateIcon from '../icons/date-icon';
@@ -14,33 +15,32 @@ const EventItem = (props) => {
     const exploreLink = `/events/${id}`;
 
     return (
-        <li className={cssClasses.item}>
-        <img src={'/' + image} alt={title} />
+      <li className={cssClasses.item}>
+        <Image src={"/" + image} alt={title} width={250} height={160}/>
+      
         <div className={cssClasses.content}>
-            <div className={cssClasses.summary}>
-                 <h2>{title}</h2>
-                <div className={cssClasses.date}>
-                    <DateIcon />
-                    <time>{humanReadabledate}</time>
-                </div>
-                <div className={cssClasses.address}>
-                     <AddressIcon />
-                     <address>{formattedAddress}</address>
-                </div>
+          <div className={cssClasses.summary}>
+            <h2>{title}</h2>
+            <div className={cssClasses.date}>
+              <DateIcon />
+              <time>{humanReadabledate}</time>
             </div>
-            <div className={cssClasses.actions}>
-                <Button link={exploreLink}>
-                    <span>Explore Event</span>
-                    <span className={cssClasses.icon}>
-                        <ArrowRightIcon />
-                    </span>
-                    
-                    </Button>
-            
+            <div className={cssClasses.address}>
+              <AddressIcon />
+              <address>{formattedAddress}</address>
             </div>
-        </div>    
-        </li>
-    )
+          </div>
+          <div className={cssClasses.actions}>
+            <Button link={exploreLink}>
+              <span>Explore Event</span>
+              <span className={cssClasses.icon}>
+                <ArrowRightIcon />
+              </span>
+            </Button>
+          </div>
+        </div>
+      </li>
+    );
 }
 
 export default EventItem;
