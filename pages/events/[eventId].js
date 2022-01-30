@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import Head from "next/head";
+import Comments from '../../components/input/comments';
 import { getEventById, getFeaturedEvents} from '../../helpers/api-util';
 import EventSummary from '../../components/event-detail/event-summary';
 import EventLogistics from '../../components/event-detail/event-logistics';
@@ -31,6 +32,7 @@ export const EventDetail = (props) => {
         <EventContent>
           <p>{event.description}</p>
         </EventContent>
+        <Comments eventId={event.id} />
       </Fragment>
     );
 }

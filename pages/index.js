@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import NewsLetterRegistration from "../components/input/newsletter-registration";
 import {getFeaturedEvents} from '../helpers/api-util';
 import EventList from '../components/events/event-list';
 
@@ -18,6 +19,7 @@ export const HomePage = (props) => {
                 </meta>
 
             </Head>
+            <NewsLetterRegistration />
             <EventList events={events} />
         </div>
     )
